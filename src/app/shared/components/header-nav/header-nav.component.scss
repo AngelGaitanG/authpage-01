@@ -12,6 +12,7 @@ header {
 
 
         h2 {
+            cursor: pointer;
             font-size: 1.5rem;
             font-weight: 600;
             color: #fff;
@@ -26,9 +27,11 @@ header {
             color: #525461;
             font-size: 1rem;
             font-weight: 600;
+            transition: color 0.3s ease;
+            cursor: pointer;
 
             &:hover {
-                color: #000;
+                color: #fff;
             }
         }
 
