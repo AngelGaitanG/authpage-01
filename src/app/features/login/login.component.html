@@ -1,1 +1,6 @@
-<p>login works!</p>
+<ng-container *ngIf="!isMobileView && loginDesktopComponent">
+    <ng-container *ngComponentOutlet="loginDesktopComponent"></ng-container>
+</ng-container>
+<ng-container *ngIf="isMobileView && loginMobileComponent">
+    <ng-container *ngComponentOutlet="loginMobileComponent"></ng-container>
+</ng-container>

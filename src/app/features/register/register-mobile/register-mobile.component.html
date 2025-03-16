@@ -1,0 +1,64 @@
+<div class="register-container-mobile">
+    <!-- Imagen de fondo -->
+    <div class="background-image"></div>
+    
+    <div class="mobile-content">
+        <!-- Header -->
+        <div class="mobile-header">
+            <h1>Create Account</h1>
+            <p class="subtitle">Join our community today</p>
+        </div>
+
+        <form>
+            <div class="name-inputs">
+                <div class="input-container">
+                    <input type="text" id="first-name" placeholder=" " />
+                    <label for="first-name">First Name</label>
+                    <i class="fa-solid fa-id-card"></i>
+                </div>
+                <div class="input-container">
+                    <input type="text" id="last-name" placeholder=" " />
+                    <label for="last-name">Last Name</label>
+                    <i class="fa-solid fa-id-card"></i>
+                </div>
+            </div>
+            <div class="input-container email-container">
+                <input type="email" id="email" placeholder=" " />
+                <label for="email">Email</label>
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="input-container password-container">
+                <input type="password" id="password" placeholder=" " />
+                <label for="password">Password</label>
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            <div class="buttons">
+                <button class="google-btn" type="button">
+                    <i class="fa-brands fa-google"></i>
+                </button>
+                <button type="submit" class="submit-btn">Create Account</button>
+            </div>
+        </form>
+        
+        <!-- Link a login -->
+        <div class="login-link">
+            Already have an account? 
+            <a routerLink="/auth/login">Sign In</a>
+        </div>
+    </div>
+</div>
+
+<!-- SVG Line -->
+<svg class="curved-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
+    <path 
+        d="M0,50 
+           Q15,45 30,55 
+           Q50,65 65,45 
+           Q80,35 100,50" 
+        fill="none" 
+        stroke="#7c869b" 
+        stroke-width="0.1" 
+        opacity="0.7"
+        stroke-dasharray="2 3"
+        class="animated-path"/>
+</svg>

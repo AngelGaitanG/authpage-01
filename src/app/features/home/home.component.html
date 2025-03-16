@@ -1,1 +1,56 @@
-<p>home works!</p>
+<div class="landing-container">
+    <!-- Nuevo fondo simplificado -->
+    <div class="tech-background">
+        <!-- SVG Line ajustado para que aparezca más arriba -->
+        
+        <!-- Patrón de puntos -->
+        <div class="dot-pattern"></div>
+        <!-- Nuevo elemento: líneas dinámicas -->
+        <div class="dynamic-lines">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </div>
+    <svg class="curved-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path 
+            d="M0,50 
+               Q15,45 30,55 
+               Q50,65 65,45 
+               Q80,35 100,50" 
+            fill="none" 
+            stroke="#7c869b" 
+            stroke-width="0.1" 
+            opacity="0.7"
+            stroke-dasharray="2 3"
+            class="animated-path"/>
+    </svg>
+
+    <!-- Título de bienvenida -->
+    <div class="welcome-section">
+        <h1>Welcome to <span class="highlight">AI Platform</span></h1>
+        <p class="subtitle">Discover the future of artificial intelligence</p>
+    </div>
+
+    <!-- Slider container -->
+    <div class="slider-container">
+        <!-- Navigation dots -->
+
+        <!-- Slider content -->
+        <div class="slider-content">
+            <!-- Navigation arrows -->
+            <button class="nav-arrow prev" (click)="prevSlide()"></button>
+            
+            <div class="slide" [class.active]="true">
+                <app-ai-solutions *ngIf="currentSlide === 0"></app-ai-solutions>
+                <app-ai-processing *ngIf="currentSlide === 1"></app-ai-processing>
+                <app-ai-security *ngIf="currentSlide === 2"></app-ai-security>
+            </div>
+
+            <button class="nav-arrow next" (click)="nextSlide()"></button>
+        </div>
+    </div>
+
+    <router-outlet></router-outlet>
+</div>

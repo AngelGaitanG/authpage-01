@@ -1,0 +1,182 @@
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.1);
+    }
+}
+
+:host {
+    display: block;
+    height: 100vh;
+    background-color: #282A37;
+    position: relative;
+}
+
+.features-container {
+    height: calc(100vh - 5rem);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.features-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+
+    .grid-overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: 
+            linear-gradient(rgba(29, 144, 244, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(29, 144, 244, 0.03) 1px, transparent 1px);
+        background-size: 30px 30px;
+        z-index: 1;
+    }
+
+    .glow-effect {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, 
+            rgba(29, 144, 244, 0.1) 0%,
+            transparent 70%);
+        animation: glowPulse 4s infinite ease-in-out;
+    }
+}
+
+.features-nav {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    z-index: 10;
+
+    .back-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem 1.25rem;
+        background: rgba(29, 144, 244, 0.1);
+        border: 1px solid rgba(29, 144, 244, 0.2);
+        border-radius: 0.75rem;
+        color: #fff;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background: rgba(29, 144, 244, 0.2);
+            transform: translateX(-5px);
+        }
+
+        i {
+            font-size: 1rem;
+        }
+    }
+}
+
+.features-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 6rem auto 0;
+    position: relative;
+    z-index: 2;
+
+    .feature-card {
+        background: rgba(50, 54, 69, 0.8);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(29, 144, 244, 0.1);
+        border-radius: 1.5rem;
+        padding: 2rem;
+        transition: all 0.3s ease;
+        opacity: 0;
+        animation: cardAppear 0.5s ease-out forwards;
+
+        &:nth-child(1) { animation-delay: 0.1s; }
+        &:nth-child(2) { animation-delay: 0.2s; }
+        &:nth-child(3) { animation-delay: 0.3s; }
+        &:nth-child(4) { animation-delay: 0.4s; }
+
+        &:hover {
+            transform: translateY(-10px);
+            border-color: rgba(29, 144, 244, 0.3);
+            box-shadow: 0 10px 20px rgba(29, 144, 244, 0.1);
+
+            .icon-container {
+                transform: scale(1.1);
+                background: linear-gradient(45deg, #1D90F4, #115896);
+            }
+        }
+
+        .icon-container {
+            width: 60px;
+            height: 60px;
+            background: rgba(29, 144, 244, 0.1);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+
+            i {
+                font-size: 1.5rem;
+                color: #1D90F4;
+            }
+        }
+
+        h3 {
+            color: #fff;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        p {
+            color: #A3A7B6;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+    }
+}
+
+// Responsive
+@media (max-width: 768px) {
+    .features-content {
+        grid-template-columns: 1fr;
+        margin-top: 4rem;
+        padding: 0 1rem;
+    }
+
+    .feature-card {
+        text-align: center;
+
+        .icon-container {
+            margin: 0 auto 1.5rem;
+        }
+    }
+}

@@ -1,7 +1,12 @@
 :host {
-    padding: 3rem;
     display: block;
     background-color: #282A37;
     height: 100vh;  
+    overflow: hidden;
 }
 
+@media screen and (max-width: 768px) {
+    :host {
+        height: auto;
+    }
+}

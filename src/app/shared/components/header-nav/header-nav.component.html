@@ -1,11 +1,11 @@
-<header>
+<header [ngClass]="{'scrolled': isScrolled}">
     <div class="hero">
         <img src="" alt="" class="logo">
-        <h2 class="app-name">App Name</h2>
+        <h2 class="app-name"><router-link routerLink="/home" class="link" routerLinkActive="active">CARTA AI</router-link></h2>
     </div>
     <nav>
-        <router-link routerLink="/" class="link">Home</router-link>
-        <router-link routerLink="/login" class="link">Login</router-link>
-        <router-link routerLink="/register" class="link">Register</router-link>
+        <router-link routerLink="/home" class="link" routerLinkActive="active">Home</router-link>
+        <router-link routerLink="/login" class="link" routerLinkActive="active">Login</router-link>
+        <router-link routerLink="/register" class="link" routerLinkActive="active">Register</router-link>
     </nav>
 </header>
